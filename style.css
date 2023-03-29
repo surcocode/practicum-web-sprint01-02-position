@@ -1,0 +1,276 @@
+/* aquí, las fuentes están conectadas utilizando la regla-at @font-face, 
+ lo explicaremos más detalladamente después */
+
+@font-face {
+    src: url(https://code.s3.yandex.net/web-code/fonts/PTMono-Regular.woff);
+    font-family: "PTMono";
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    src: url(https://code.s3.yandex.net/web-code/fonts/Lora-Regular.woff);
+    font-family: "Lora";
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    src: url(https://code.s3.yandex.net/web-code/fonts/PlayfairDisplay-Bold.woff);
+    font-family: "Playfair Display";
+    font-style: bold;
+    font-weight: 700;
+}
+
+
+/* propiedades aplicadas a todo el contenido visible de la página */
+
+.page {
+    background-color: #161819;
+    /* la página tiene un fondo oscuro */
+    color: white;
+    /* el texto es blanco */
+    font-family: 'Lora';
+    /* relleno superior e inferior establecido en 120 píxeles, con el relleno izquierdo y derecho a 0 */
+    padding: 120px 0;
+    /* top and bottom padding set to 120 pixels, with left and right padding set to 0 */
+    /* aquí es donde ocurre la magia que vuelve bonitas 
+ a nuestras fuentes, aprenderemos más sobre esto más tarde */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    -ms-font-feature-settings: "kern"1;
+    font-feature-settings: "kern";
+}
+
+
+/* todo el contenido de la página web está centrado 
+ y ocupa el 40% del ancho de la pantalla */
+
+.content__container {
+    width: 40%;
+    margin: auto;
+}
+
+
+/* el encabezado de la página principal, así como 
+ los titulares y subtitulares de los capítulos comparten esta fuente */
+
+.content__title {
+    font-family: 'Playfair Display';
+}
+
+
+/* propiedades para el título de la página */
+
+.content__title_item_main {
+    color: #ff6666;
+    font-size: 55px;
+    line-height: 70px;
+    margin-bottom: 60px;
+}
+
+
+/* propiedades para los titulares y subtitulares de los capítulos */
+
+.content__title_item_sub {
+    color: #ff6666;
+    font-size: 55px;
+    line-height: 70px;
+    margin: 120px 0 60px;
+    width: 50%;
+}
+
+
+/* propiedades para los subtitulares de los capítulos */
+
+.content__title_item_method {
+    font-size: 40px;
+    line-height: 50px;
+    margin: 60px 0 20px;
+}
+
+
+/* propiedades para los párrafos estándar */
+
+.content__text {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 60px;
+}
+
+
+/* propiedades para las citas */
+
+.content__quote {
+    font-family: 'Lora';
+    font-size: 34px;
+    line-height: 42px;
+    padding: 40px;
+    margin-bottom: 60px;
+    border-top: 2px solid #ff6666;
+    border-bottom: 2px solid #ff6666;
+    position: relative;
+    top: 5px;
+    left: 60px;
+}
+
+
+/* propiedades para la información de las fuentes de las citas */
+
+.content__quote-origin {
+    display: block;
+    color: #a6a6a6;
+    text-align: right;
+    font-size: 22px;
+    margin-top: 52px;
+    margin-right: -40px;
+}
+
+
+/* estas son las reglas para el menú y sus elementos, 
+ necesitan escribirse separadas debido a su posicionamiento único */
+
+.menu__item {
+    position: fixed;
+}
+
+.menu__item_theme_landscape {
+    top: 40px;
+    left: 40px;
+}
+
+.menu__item_theme_portrait {
+    top: 40px;
+    right: 40px;
+}
+
+.menu__item_theme_viewpoint {
+    bottom: 40px;
+    left: 40px;
+}
+
+.menu__item_theme_expression {
+    bottom: 40px;
+    right: 40px;
+}
+
+
+/* propiedades compartidas por todos los enlaces de la página a otras secciones de la página */
+
+.menu__link {
+    color: #a6a6a6;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: 'PTMono';
+    text-transform: uppercase;
+}
+
+
+/* cambia el color de un enlace a otra sección de la página cuando el ratón pasa por encima de él */
+
+.menu__link:hover {
+    color: #ff6666;
+}
+
+
+/*propiedades compartidas por todas las imágenes que emergen junto a sus respectivos 
+ elementos del menú: permanecen ocultas a no ser que el usuario interactúe con los elementos del menú */
+
+.menu__picture {
+    display: none;
+    width: 300px;
+    position: absolute;
+}
+
+.menu__item:hover .menu__picture {
+    display: block;
+}
+
+/* estas son las reglas para las imágenes emergentes, 
+ aprenderemos a escribirlas a lo largo de este capítulo */
+
+.menu__picture_theme_landscape {
+    top: 40px;
+    left: 40px;
+}
+
+.menu__picture_theme_portrait {
+    top: 40px;
+    right: 40px;
+}
+
+.menu__picture_theme_viewpoint {
+    bottom: 40px;
+    left: 40px;
+}
+
+.menu__picture_theme_expression {
+    bottom: 40px;
+    right: 40px;
+}
+
+
+/* propiedades compartidas de los contenedores para las imágenes que aparecen en el texto */
+
+.content__image {
+    margin: 60px 0;
+    position: relative;
+}
+
+
+/* propiedades compartidas de las imágenes que aparecen en el texto */
+
+.content__image-item {
+    width: 100%;
+}
+
+
+/* propiedades compartidas de la imagen "covers" cuando el usuario no interactúe con ellos */
+
+.content__image-cover {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* cambios para las propiedades de "cover" cuando el ratón se pose sobre ella */
+
+.content__image-cover:hover {
+    opacity: 1;
+}
+
+
+/* propiedades de los pies de imagen */
+
+.content__image-name {
+    font-size: 14px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+
+/* propiedades del contenedor para la información sobre los autores y los derechos de autor */
+
+.content__item_type_copyright {
+    margin-top: 40px;
+    font-size: 22px;
+    line-height: 30px;
+    color: #a6a6a6;
+}
+
+
+/* propiedades del texto para la información sobre los autores */
+
+.content__text_type_copyright {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 0;
+}
